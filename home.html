@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -7,41 +7,80 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="sidebar">
+    <h2>📋 Menu</h2>
+    <ul>
+      <li><a href="#">🏠 Home</a></li>
+      <li><a href="#">📝 Tasks</a></li>
+      <li><a href="#">📊 Stats</a></li>
+    </ul>
+    <button id="toggle-theme">🌙 Toggle Dark Mode</button>
+  </div>
   <div class="container">
-    <h1>📝 Task Manager</h1>
-    <form id="task-form">
-      <input type="text" id="task-input" placeholder="Enter a task" required />
-      <button type="submit">Add</button>
-    </form>
-    <ul id="task-list"></ul>
-    <label for="priority">Priority:</label>
-    <select id="priority">
-  <option value="High">🔥 High</option>
-  <option value="Medium">⚖️ Medium</option>
-  <option value="Low">🌱 Low</option>
-</select>
-<label for="due-date">Due Date:</label>
-<input type="date" id="due-date" title="Select due date" placeholder="Select due date" />
-<label for="filter">Filter Tasks:</label>
-<select id="filter">
-  <option value="all">All</option>
-  <option value="completed">Completed</option>
-  <option value="incomplete">Incomplete</option>
-  <option value="high">High Priority</option>
-</select>
-<label for="project">Project:</label>
-<select id="project">
-  <option value="Personal">Personal</option>
-  <option value="Work">Work</option>
-  <option value="School">School</option>
-</select>
-<textarea id="notes" placeholder="Add notes..."></textarea>
+    <header>
+      <h1>📝 Task Manager</h1>
+    </header>
+    <section class="task-input">
+      <form id="task-form">
+        <input type="text" id="task-input" placeholder="Enter a task" required />
+        <label for="priority">Priority:</label>
+        <select id="priority">
+          <option value="High">🔥 High</option>
+          <option value="Medium">⚖️ Medium</option>
+          <option value="Low">🌱 Low</option>
+        </select>
+        <input type="date" id="due-date" title="Select due date" />
+        <label for="project">Project:</label>
+        <select id="project" title="Select project">
+          <option value="Personal">Personal</option>
+          <option value="Work">Work</option>
+          <option value="School">School</option>
+        </select>
+        <textarea id="notes" placeholder="Add notes..."></textarea>
+        <button type="submit">Add Task</button>
+      </form>
+    </section>
+    <section class="filters">
+      <label for="filter">Filter:</label>
+      <select id="filter">
+      <option value="all">All</option>
+      <option value="completed">Completed</option>
+      <option value="incomplete">Incomplete</option>
+      <option value="high">High Priority</option>
+      </select>
+      <input type="text" id="search" placeholder="🔍 Search tasks..." />
+      <button id="search-btn" type="button">Search</button>
+    </section>
+    <section class="stats">
+  <h2>📊 Task Stats</h2>
+  <div class="stats-grid">
+    <div class="stat-box">
+      <h3>Total</h3>
+      <p id="total-tasks">0</p>
+    </div>
+    <div class="stat-box">
+      <h3>Completed</h3>
+      <p id="completed-tasks">0</p>
+    </div>
+    <div class="stat-box">
+      <h3>Pending</h3>
+      <p id="pending-tasks">0</p>
+    </div>
+  </div>
+</section>
 
-
-
-
-
+    <section class="task-list">
+      <ul id="task-list"></ul>
+    </section>
+    <section class="task-details" style="display:none;">
+      <h2>Task Details</h2>
+      <div id="details-content"></div>
+    </section>
   </div>
   <script src="script.js"></script>
+  
 </body>
+<footer>
+  <p>&copy; 2023 Task Manager. All rights reserved.</p>
+</footer>
 </html>
