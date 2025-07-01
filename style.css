@@ -1,0 +1,24 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 0; /* Remove padding */
+    margin: 0;  /* Ensure no margin */
+}
+
+.container {
+    background: white;
+    border-radius: 0; /* Remove border radius for full coverage */
+    width: 100vw;
+    height: 100vh;
+    box-shadow: none; /* Optional: remove shadow for flush look */
+    padding: 0; /* Remove padding */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow-y: auto;
+}
